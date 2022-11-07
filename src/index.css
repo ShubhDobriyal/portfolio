@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  main {
+    @apply bg-white text-text dark:bg-bgColor dark:text-textGray text-sm font-poppins font-normal;
+  }
+
+  h1,
+  h2,
+  h4 {
+    @apply leading-none;
+  }
+
+  h3 {
+    @apply leading-normal;
+  }
+
+  h5 {
+    @apply flex items-center gap-4 font-mohave text-lg text-accent tracking-wider;
+  }
+
+  .line-before::before {
+    content: "";
+    @apply w-16 block h-[1px] bg-accent;
+  }
+
+  .after-line::after {
+    content: "";
+    @apply w-16 block h-[1px] bg-accent;
+  }
+
+  .container {
+    @apply px-3 mx-auto;
+  }
+
+  .before-line::before {
+    content: "";
+    @apply h-[2px] w-3/4 bg-accent block top-1/2 absolute translate-y-1/2 -left-full;
+  }
+
+  .underline-link::after {
+    content: "";
+    @apply bg-accent opacity-30 h-3 w-[98%] mx-auto absolute left-1/2 -translate-x-1/2 bottom-1;
+  }
+
+  .underline-link:hover::after {
+    @apply h-5 transition-all ease-linear;
+  }
+
+  .down-arrow::after {
+    content: "";
+    border-width: 8px 8px 0 8px;
+    border-color: #000 transparent transparent transparent;
+    @apply h-0 w-0 absolute -bottom-[6px] left-2;
+  }
+  .active {
+    @apply font-medium;
+  }
+  .active span {
+    @apply font-bold;
+  }
+}
